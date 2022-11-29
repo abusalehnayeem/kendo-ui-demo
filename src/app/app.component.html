@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="card w-100 mt-3">
+    <div class="card-header">
+      Example Form
+    </div>
+    <div class="card-body">
+      <fieldset class="border">
+        <legend class="float-none w-auto p-2">Validation Example</legend>
+        <form [formGroup]="frmSalesOrder" (ngSubmit)="onSubmit()">
+          <div class="col-md-12">
+            <!-- <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="col-form-label" for="transactionDate">{{ 'lbl_transaction_date'| translate
+                    }}</label>
+                  <kendo-datepicker [format]="'yyyy-MM-dd'" class="form-control text-box single-line"
+                    id="transactionDate" name="transactionDate" formControlName="transactionDate">
+                  </kendo-datepicker>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="col-form-label" for="revisionDate">{{ 'lbl_revision_date'| translate }}</label>
+                  <kendo-datepicker [format]="'yyyy-MM-dd'" [disabled]="true"
+                    class="form-control text-box single-line" id="revisionDate" name="revisionDate"
+                    formControlName="revisionDate"></kendo-datepicker>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <p>Complete the form to enable button.</p>
+          <button type="submit" class="btn btn-primary" [disabled]="!frmSalesOrder.valid">Submit</button>
+        </form>
+      </fieldset>
+    </div>
+    <div class="card-footer">
+      <p>Form Value: {{ frmSalesOrder.value | json }}</p>
+    </div>
+  </div>
+</div>
