@@ -23,13 +23,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(private readonly fb: FormBuilder) {}
 
   ngOnInit(): void {
-
-  }
-
-  ngAfterViewInit(): void {
     this.frmSalesOrder.reset();
     this.frmSalesOrder.reset(this.createSalesOrderFormGroup().value);
     this.frmSalesOrder.enable();
+  }
+
+  ngAfterViewInit(): void {
+
   }
 
 
