@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+
 
 
 
@@ -18,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     GridModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DateInputsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

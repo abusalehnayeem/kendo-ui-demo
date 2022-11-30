@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="card w-100 mt-3">
+  <div class="card mt-3">
     <div class="card-header">
       Example Form
     </div>
@@ -8,25 +8,32 @@
         <legend class="float-none w-auto p-2">Validation Example</legend>
         <form [formGroup]="frmSalesOrder" (ngSubmit)="onSubmit()">
           <div class="col-md-12">
-            <!-- <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="col-form-label" for="transactionDate">{{ 'lbl_transaction_date'| translate
-                    }}</label>
-                  <kendo-datepicker [format]="'yyyy-MM-dd'" class="form-control text-box single-line"
-                    id="transactionDate" name="transactionDate" formControlName="transactionDate">
-                  </kendo-datepicker>
-                </div>
+            <div class="row p-2">
+              <div class="form-group col-md-6">
+                <label class="col-form-label" for="transactionDate">Transaction Date</label>
+                <kendo-datepicker [format]="'yyyy-MM-dd'" id="transactionDate" name="transactionDate"
+                  formControlName="transactionDate"> </kendo-datepicker>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="col-form-label" for="revisionDate">{{ 'lbl_revision_date'| translate }}</label>
-                  <kendo-datepicker [format]="'yyyy-MM-dd'" [disabled]="true"
-                    class="form-control text-box single-line" id="revisionDate" name="revisionDate"
-                    formControlName="revisionDate"></kendo-datepicker>
-                </div>
+              <div class="form-group col-md-6">
+                <label class="col-form-label" for="customerOrderNo">SO No</label>
+                <input class="form-control" id="customerOrderNo" name="customerOrderNo" type="text" value=""
+                  formControlName="customerOrderNo" maxlength="20" />
               </div>
-            </div> -->
+            </div>
+            <div class="row p-2">
+              <div class="form-group" formArrayName="details">
+                <kendo-grid [kendoGridBinding]="gridData" [resizable]="true" scrollable="virtual" style="height: 60vh"
+                  (add)="onGridAdd($event)">
+                  <ng-template kendoGridToolbarTemplate>
+                    <button kendoGridAddCommand> Add </button>
+                  </ng-template>
+                  <kendo-grid-column field="itemCode" title="Item Code"></kendo-grid-column>
+                  <kendo-grid-column field="qty" title="Qty"> </kendo-grid-column>
+                  <kendo-grid-column field="unitPrice" title="Unit Price"> </kendo-grid-column>
+                  <kendo-grid-column field="total" title="Total"> </kendo-grid-column>
+                </kendo-grid>
+              </div>
+            </div>
           </div>
           <p>Complete the form to enable button.</p>
           <button type="submit" class="btn btn-primary" [disabled]="!frmSalesOrder.valid">Submit</button>
