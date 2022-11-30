@@ -37,7 +37,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     return this.fb.group({
       transactionDate: new FormControl(null, [Validators.required]),
       customerOrderNo: new FormControl('', [Validators.required]),
-      details: this.fb.array([]),
+      details: this.fb.array([], [Validators.required, Validators.minLength(1)]),
     });
   }
 
