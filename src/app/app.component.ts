@@ -6,7 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { AddEvent, GridComponent } from '@progress/kendo-angular-grid';
+import { AddEvent } from '@progress/kendo-angular-grid';
 
 @Component({
   selector: 'app-root',
